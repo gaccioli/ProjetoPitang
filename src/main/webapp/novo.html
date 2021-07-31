@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Cadastro de usuários</title>
+<link rel="icon" href="login.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<img src="img/login.png">
+	<div class="content" id="cadastro">
+		<form name="frmUsuario" method="post" action="insert">
+			<h1>Cadastro</h1>
+			<p>
+				<label for="nome_cad">Nome</label> <input id="nome_cad"
+					name="nome_cad" required="required" type="text" placeholder="nome" />
+			</p>
+
+			<p>
+				<label for="email_cad">E-mail</label> <input id="email_cad"
+					name="email_cad" required="required" type="email"
+					placeholder="contato@htmlecsspro.com" />
+			</p>
+
+			<p>
+				<label for="fone_ddd_cad">Telefone</label> 
+				<input id="fone_ddd_cad" name="fone_ddd" required="required" type="number" maxlength="2" placeholder="ex. 81" /> 
+				<input id="fone_numero_cad"	name="fone_numero" required="required" type="text" maxlength="9" placeholder="ex. 997777777" /> 
+				<input id="fone_tipo_cad" name="fone_tipo" required="required"	type="text" placeholder="Tipo: celular, Fixo" />
+			</p>
+
+			<p>
+				<label for="senha_cad">Senha</label> <input id="senha_cad"
+					name="senha_cad" required="required" type="password"
+					placeholder="ex. 1234" />
+			</p>
+
+			<p>
+				<input type="submit" value="Cadastrar" /> <input type="submit"
+					value="Voltar" onclick="validar()" />
+			</p>
+
+		</form>
+		<script src="script/validador.js"></script>
+	</div>
+</body>
+</html>
