@@ -56,7 +56,6 @@ public class Controller extends HttpServlet {
 		
 		dao.inserirUsuario(usuario);
 		response.sendRedirect("main");
-		response.sendRedirect("cadastro.jsp");
 
 	}
 

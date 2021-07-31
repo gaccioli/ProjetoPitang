@@ -28,7 +28,7 @@ public class DAO {
 
 	}
 	
-	/*
+	
 	public void testeConexao() {
 		try {
 			Connection con = conectar();
@@ -38,7 +38,9 @@ public class DAO {
 			System.out.println(e);
 		}
 	}
-	*/
+
+	
+	
 	
 	public void inserirUsuario(JavaBeans usuario) {
 		String create = "insert into users (nome,email,fone_ddd,fone_numero,fone_tipo,senha) values (?,?,?,?,?,?)";
@@ -70,7 +72,7 @@ public class DAO {
 				String id = rs.getString(1);
 				String nome = rs.getString(2);
 				String email = rs.getString(3);
-				int fone_ddd = rs.getInt(4);
+				Integer fone_ddd = rs.getInt(4);
 				String fone_numero = rs.getString(5);
 				String fone_tipo = rs.getString(6);
 				String senha = rs.getString(7);
@@ -137,4 +139,6 @@ public class DAO {
 			System.out.println(e);
 		}
 	}
+	
+		
 }
