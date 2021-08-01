@@ -28,7 +28,7 @@ public class DAO {
 
 	}
 	
-	
+	/*
 	public void testeConexao() {
 		try {
 			Connection con = conectar();
@@ -39,7 +39,7 @@ public class DAO {
 		}
 	}
 
-	
+	*/
 	
 	
 	public void inserirUsuario(JavaBeans usuario) {
@@ -128,7 +128,7 @@ public class DAO {
 
 
 	public void deletarUsuario(JavaBeans usuario) {
-		String delete = "delete from userswhere id=?";
+		String delete = "delete from users where id=?";
 		try {
 			Connection con = conectar();
 			PreparedStatement pst = con.prepareStatement(delete);

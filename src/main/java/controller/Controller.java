@@ -1,7 +1,9 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +15,9 @@ import model.JavaBeans;
 
 @WebServlet(urlPatterns = { "/Controller", "/main", "/insert" })
 public class Controller extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
+	
 	DAO dao = new DAO();
 	
 	JavaBeans usuario = new JavaBeans();
@@ -32,21 +36,25 @@ public class Controller extends HttpServlet {
 			usuarios(request, response);
 		} else if(action.equals("/insert")) {
 			novoUsuario(request,response);
-		}
-		
-		else {
+		}else {
 			response.sendRedirect("index.html");
 		}
 	}
 
 	protected void usuarios(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.sendRedirect("cadastro.jsp");
-
+		
+		ArrayList<JavaBeans> lista = dao.listarUsuarios();
+		request.setAttribute("usuarios", lista);
+		RequestDispatcher rd = request.getRequestDispatcher("/cadastro.jsp");
+		rd.forward(request, response);
+		
+	
 	}
 	
 	protected void novoUsuario(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+	
 		usuario.setNome(request.getParameter("nome"));
 		usuario.setEmail(request.getParameter("email"));		
 		usuario.setFone_ddd(Integer.parseInt(request.getParameter("fone_ddd")));
