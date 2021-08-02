@@ -39,6 +39,12 @@ h1{
 	cursor: pointer;
 }
 
+table{
+	margin-top: 30px;
+	border-collapse: collapse;
+	table-layout: fixed;
+ 	text-align: center;
+}
 
 #cadastro{
   position: absolute;
@@ -52,4 +58,24 @@ h1{
   animation-duration: 0.5s;
   animation-timing-function: ease;
   animation-fill-mode: both;
+}
+
+#tabela {
+	margin-top: 30px;
+	border-collapse: collapse;
+	table-layout: fixed;
+ 	text-align: center;
+}
+
+#tabela th {
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: left;
+	background-color: #66bbff;
+	color: #fff;
+}
+
+#tabela td {
+	border: 1px solid #ddd;
+	padding: 10px;
 }
